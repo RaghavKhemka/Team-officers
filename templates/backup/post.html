@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="#">Communities</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#" class="active">Post</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="post-container">
+            <h1>Share Your Work</h1>
+            <form method="POST" action="/post">    
+                <label for="project-title">Project Title1</label>
+                <input type="text" id="project-title" name="project-title" required>
+
+                <label for="description">Description (50-100 words)</label>
+                <textarea id="description" name="description" rows="4" cols="50" maxlength="100" required></textarea>
+
+                <div class="tag-container">
+                    <label for="technical-tags">Technical Tags (e.g. C++, Python, Web Dev)</label>
+                    <input type="text" id="technical-tags" name="technical-tags">
+                </div>
+
+                <div class="tag-container">
+                    <label for="business-tags">Business Tags (e.g. Management, Planning, Budgeting)</label>
+                    <input type="text" id="business-tags" name="business-tags">
+                </div>
+
+                <button type="submit" formmethod="post">Post</button>
+            </form>
+        </div>
+    </main>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

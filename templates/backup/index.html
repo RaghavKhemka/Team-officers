@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>KYC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="static/img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <script src="static/script.js"></script>
+  </head>
+  <body>
+    <header class="mb-3">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="profile-icon">
+          <a href="profile.html">
+          <img src="static/img/icons8-user-48.png" alt="Profile Image"/>
+        </a>
+        </div>
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="static/img/icons8-code.gif" height="30" alt="logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="communities.html">QNA</a>
+              </li>
+              <li class="nav-item-a">
+                <a class="nav-link" href="post"">Post</a>
+              </li>                        
+            </ul>
+            <div class="search-bar">
+              <form action="#" method="get">
+                <input type="text" placeholder="Search..." />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link btn btn-outline-primary text-primary m-1"
+                  href="register.html"
+                  >Register</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn btn-outline-primary text-primary m-1"
+                  href="login.html"
+                  >Log In</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="full-height">
+      <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-4">Welcome to Code for Colleagues!</h1>
+          <p class="lead">
+            A community-driven platform to share problems/solutions.
+          </p>
+          <div class="share-thoughts">
+            <!-- Share Thoughts Popup -->
+            <input type="text" placeholder="Share thoughts, ideas..." />           
+              <div class="post-type">
+                <img src="static/img/icons8-discussion-forum-48.png" alt="Discussion" />
+                <span>Discussion</span>
+              </div>
+              <div class="post-type">
+                <img src="static/img/icons8-question-mark-48.png" alt="Question" />
+                <span>Question</span>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4" />
+          {% for i in range(1,(Posts |length + 1)): %}
+         
+
+
+          <div class="post-section">
+            <div class="post">
+              <div class="post-header">
+                <img src="icons8-user-48.png" alt="user-avatar" />
+                <div class="post-info">
+                  <h4 class="post-author">
+                    <a href="profile2.html"> {{Posts[-1*i].title}} </a>
+                  </h4>
+               
+                  <p class="post-time">{{elapsed_time[-1*i]}}</p>
+                </div>
+              </div>
+              <div class="post-content">
+                <p>{{Posts[-1*i].description}}</p>
+                <img src="https://placehold.it/500x300" alt="post-image" />
+              </div>
+              <div class="post-footer">
+                <ul class="post-actions">
+                  <li>
+                    <a href="#"><i class="fa fa-thumbs-up"></i> Like</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-comment"></i> Comment</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-share"></i> Share</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="post-section">
+            <div class="post">
+              <div class="post-header">
+                <img src="icons8-user-48.png" alt="user-avatar" />
+                <div class="post-info">
+                  <h4 class="post-author">Bharti Mishra</h4>
+                  <p class="post-time">11 hours ago</p>
+                </div>
+              </div>
+              <div class="post-content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat corporis molestiae ipsum inventore quam reprehenderit, est sunt iure quisquam! Adipisci labore aut repellendus dolorem culpa in quam, rem recusandae quas?</p>
+                <img src="https://placehold.it/500x300" alt="post-image" />
+              </div>
+              <div class="post-footer">
+                <ul class="post-actions">
+                  <li>
+                    <a href="#"><i class="fa fa-thumbs-up"></i> Like</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-comment"></i> Comment</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-share"></i> Share</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
